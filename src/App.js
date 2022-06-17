@@ -11,7 +11,7 @@ function App() {
       <Singin />
       </Route>
       <Route path="/registration" component={Registration}>
-      <Singin />
+      <Registration />
       </Route>
       <Route path="" component={Homepage}>
       
