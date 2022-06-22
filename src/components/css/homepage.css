@@ -1,5 +1,22 @@
-.imguser{
+body{
+    background-color: ;
+}
+ 
 
-    width: 12%;
-    height: 30%;
+
+.displayinfo{
+    display:flex;
+    flex-direction: row;
+}
+
+.displayinfo span{
+    padding: 24px;
+    font-size: large;
+}
+.displayinfo .imguser {
+
+    width: 55px;
+    height: 55px;
+    position: absolute;
+
 }

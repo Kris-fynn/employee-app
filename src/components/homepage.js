@@ -1,6 +1,9 @@
 import React,{useState} from 'react';
 import{Link} from 'react-router-dom';
-import "./homepage"
+import "./css/homepage.css";
+
+
+
 function Homepage() {
    const [user,setUser]=useState(JSON.parse(localStorage.getItem("user")));
     return (
