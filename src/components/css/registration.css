@@ -22,7 +22,7 @@ html{
 }
 
 body{
-    background:  orange;
+    background:  rgb(98, 99, 134);
     display: flex;
     flex-flow: column;
     height: 100vh;
