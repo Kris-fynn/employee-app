@@ -27,12 +27,13 @@ function  Singin() {
             alert("You have enter correct Email and password");
             userFound = true;
             window.location = "/homepage";
-          }else{
-            alert("You have enter wrong Email and password")
           }
+         
 
          }
-     
+         if(!userFound){
+            alert("Your  Email and password is incorrect");
+          }
       }
 
      }
