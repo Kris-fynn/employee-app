@@ -1,12 +1,11 @@
 import React,{useState} from 'react';
+
 import {Link} from 'react-router-dom'
-function Singin () {
+function  Singin() {
     const[ email, setEmail] =useState("");
     const[ password, setPassword] =useState("");
-    const getData =(e)=>{
+    const getData = (e) =>{
       e.preventDefault();
-      // const getuserArr=JSON.stringify(localStorage.getItem("user"));
-      // console.log( getuserArr);
       let logdetails={
         email:email,
         password:password
@@ -26,43 +25,34 @@ function Singin () {
         for(let user of storedUsers) {
           if(email === user.email && password === user.password){
             alert("You have enter correct Email and password");
-            userFound=true
-            window.location = "/Homepage";
+            userFound = true;
+            window.location = "/homepage";
+          }else{
+            alert("You have enter wrong Email and password")
           }
+
          }
-         if(!userFound){
-          alert("You have enter wrong Email and password");
-         }
-      // if(email===getuserArr[email] && password===getuserArr[password]){
-      //   alert("You have enter coorect Email and password");
-      //   window.Location='/Home';
-      // }
-      // else if(getuserArr[email]==="" && getuserArr[password]===""){
-      //   alert("Your email or password emp");
-      // }
-      // else{
-      //   alert("Your email or password incorrect");
-      //   window.Location="/Home";
-      // }
+     
       }
-    return (
-           <div><h1>Employee Singin</h1>
-              <form role="form" onsubmit="signIn(event);" autocomplete="off">
-            <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="Email Address" onChange={(event)=>setPassword(event.target.value)} />
-            </div>
-            <div class="form-group">
-                <input type="password" name="pwd" id="pwd" placeholder="Password" onChange={(event)=>setPassword(event.target.value)} />
-            </div>
-            <div class="form-group">
+
+     }
+     return (
+        <div><h1>Employee Singin</h1>
+            <form role="form" onsubmit="Singin(event);" autocomplete="off">
+              <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Enter email" onChange={(event)=>setEmail(event.target.value)} />
+               </div>
+              <div class="form-group">
+                <input type="password" name="pwd" id="password" placeholder="Password" onChange={(event)=>setPassword(event.target.value)} />
+              </div>
+              <div class="form-group">
                 <button className='btn'   onClick={getData}>Sign In</button>
-            </div>
-            <span><p>Don't have an account? <Link to="/registration" >Register here</Link></p>
-        </span>
-        </form>
-           </div> 
+              </div>
+               <span><p>Don't have an account? <Link to="/registration" >Register here</Link></p>
+              </span>
+           </form>
+        </div> 
            
         );
-     }
     }
 export default Singin;

@@ -1,5 +1,6 @@
-import React,{useState} from 'react'
-import{Link} from 'react-router-dom'
+import React,{useState} from 'react';
+import{Link} from 'react-router-dom';
+import "./homepage"
 function Homepage() {
    const [user,setUser]=useState(JSON.parse(localStorage.getItem("user")));
     return (
@@ -9,6 +10,7 @@ function Homepage() {
       {user.map((user,index)=>{
                           return(
                               <div  className='displayinfo'>
+                                  <span> Image: <p><img src={user.image} className="imguser" /></p> </span>
                                   <span> Name: <p>{user.name}</p> </span>
                                   <span> Surname: <p>{user.surname}</p> </span>
                                   <span> Email: <p>{user.email}</p></span>

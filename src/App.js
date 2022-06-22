@@ -7,18 +7,11 @@ function App() {
   return (
     <Router>
     <Switch>
-      <Route exact path="/" component={Singin}>
-      <Singin />
-      </Route>
-      <Route path="/registration" component={Registration}>
-      <Registration />
-      </Route>
-      <Route path="" component={Homepage}>
-      
-      </Route>
-      
+      <Route exact path="/" component={Singin}></Route>
+      <Route path="/registration" component={Registration}></Route>
+      <Route path="/" component={Homepage}></Route>
+
     </Switch>
-    
     </Router>
       
       

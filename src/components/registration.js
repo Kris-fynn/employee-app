@@ -1,12 +1,13 @@
-import './css/registration.css'
-import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import './css/registration.css';
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
+
 function Registration() {
    const[ name, setName] =useState("");
    const[ surname, setSurname] =useState("");
    const[ email, setEmail] =useState("");
    const[ contact, setContact] =useState("");
-   const[ employeenumber, setEmployeenumber] =useState("");
+   const[ employeenumber, setEmployeenumber] = useState("");
    const[ password, setPassword] =useState("");
    const[ image, setImage]=useState("");
    let lowerCaseLetters = /[a-z]/g;
@@ -16,11 +17,11 @@ function Registration() {
        const imgPath = document.querySelector("#userImage1").files[0];
        const reader = new FileReader();
        reader.addEventListener("load", function() {
-           localStorage.setItem('image', reader.result);
+        localStorage.setItem('image', reader.result);
        }, false);
        reader.readAsDataURL(imgPath);
    }
-   const registration=(e)=>{
+   const Registration=(e)=>{
        e.preventDefault();
        let employeeDetails={
            name:name,
@@ -29,8 +30,8 @@ function Registration() {
            contact:contact,
            employeenumber:employeenumber,
            password:password,
-           image:image,
-           date: new Date
+           image:localStorage.getItem('image'),
+           date: new Date()
        };
        if(employeeDetails.name===""){
            alert("Enter Your Name")
@@ -77,16 +78,16 @@ function Registration() {
            <div><h1>Employee Registration</h1>
             <form role="formData" onsubmit="signUp(event);" autocomplete="off">
             <div class="form-group">
-                <input type="number" name="enumber" id="ename" placeholder="Employee number" onChange={(event)=>setEmployeenumber(event.target.value)} />
+                <input type="number" name="enumber" id="employeenumber" placeholder="Employee number" onChange={(event)=>setEmployeenumber(event.target.value)} />
             </div>
             <div class="form-group">
-                <input type="text" name="fname" id="fname" placeholder="First Name" onChange={(event)=>setName(event.target.value)}/>
+                <input type="text" name="fname" id="name" placeholder="First Name" onChange={(event)=>setName(event.target.value)} />
             </div>
             <div class="form-group">
-                <input type="text" name="lname" id="lname" placeholder="Last Name"  onChange={(event)=>setSurname(event.target.value)}/>
+                <input type="text" name="lname" id="surname" placeholder="Last Name"  onChange={(event)=>setSurname(event.target.value)} />
             </div>
             <div class="form-group">
-                <input type="phoneNumber" name="phoneNumber" id="conact" placeholder="Employee phone number"   onChange={(event)=>setContact (event.target.value)}/>
+                <input type="phoneNumber" name="phoneNumber" id="conact" placeholder="Employee phone number"   onChange={(event)=>setContact (event.target.value)} />
             </div>
             <div class="form-group">
             <label>Insert Image</label>
@@ -100,10 +101,10 @@ function Registration() {
             </div>
             
             <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="Email Address"  onChange={(event)=>setEmail(event.target.value)}/>
+                <input type="email" name="email" id="email" placeholder="Email Address"  onChange={(event)=>setEmail(event.target.value)} />
             </div>
             <div class="form-group">
-                <input type="password" name="pwd" id="pwd" placeholder="Password" onChange={(event)=>setPassword(event.target.value)}/>
+                <input type="password" name="pwd" id="password" placeholder="Password" onChange={(event)=>setPassword(event.target.value)}/>
             </div>
             
             <div class="form-group">
